@@ -1,0 +1,135 @@
+// app global css
+
+// --------------------------------------------------
+// Design tokens (theme-aware)
+// --------------------------------------------------
+:root {
+  --app-bg: #f4f5fb;
+  --app-surface: #ffffff;
+  --app-muted: #6b7280;
+  --app-radius: #{$app-radius};
+  --app-radius-sm: #{$app-radius-sm};
+  --app-shadow: 0 6px 24px rgba(31, 38, 135, 0.08);
+  --app-shadow-hover: 0 14px 34px rgba(108, 92, 231, 0.22);
+}
+
+.body--dark {
+  --app-bg: #12131f;
+  --app-surface: #1e1f2e;
+  --app-muted: #9aa0b5;
+  --app-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  --app-shadow-hover: 0 14px 34px rgba(0, 0, 0, 0.5);
+}
+
+// --------------------------------------------------
+// Layout
+// --------------------------------------------------
+.q-page {
+  background: var(--app-bg);
+}
+
+.page-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.app-footer {
+  background: var(--app-surface) !important;
+}
+
+// --------------------------------------------------
+// Cards
+// --------------------------------------------------
+.app-card {
+  border-radius: var(--app-radius) !important;
+  background: var(--app-surface) !important;
+  border: none;
+  box-shadow: var(--app-shadow);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.body--dark .app-card {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.app-card--hover {
+  cursor: pointer;
+}
+
+.app-card--hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--app-shadow-hover);
+}
+
+.app-card--hover:focus-visible {
+  outline: 2px solid var(--q-primary);
+  outline-offset: 2px;
+}
+
+// --------------------------------------------------
+// Brand gradients
+// --------------------------------------------------
+.hero-gradient {
+  background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 55%, #00cec9 100%) !important;
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe) !important;
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, #00b894, #55efc4) !important;
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(135deg, #fd79a8, #e84393) !important;
+}
+
+.bg-gradient-warning {
+  background: linear-gradient(135deg, #fdcb6e, #e17055) !important;
+}
+
+.icon-chip {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+// --------------------------------------------------
+// Typography helpers
+// --------------------------------------------------
+.text-muted {
+  color: var(--app-muted) !important;
+}
+
+.section-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+// --------------------------------------------------
+// Focus + scrollbars
+// --------------------------------------------------
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--q-primary);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(108, 92, 231, 0.35);
+  border-radius: 8px;
+}
